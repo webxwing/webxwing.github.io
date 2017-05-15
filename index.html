@@ -175,7 +175,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/24/windows下nodejs安装与配置/">&#39;windows下nodejs安装与配置&#39;</a>
+      <a class="article-title" href="/2016/10/24/windows下nodejs安装与配置/">windows下nodejs安装与配置</a>
     </h1>
   
 
@@ -191,10 +191,19 @@ var _hmt = _hmt || [];
         <blockquote>
 <p>其实网上关于nodejs的安装有很多介绍，<br>我只是把我自己的操作记录下来，<br>希望对大家、对我自己都有帮助。</p>
 </blockquote>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-        
-          <a class="article-more-a" href="/2016/10/24/windows下nodejs安装与配置/#more">more >></a>
-        
+<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>nodejs<a href="http://nodejs.cn/download/" target="_blank" rel="external">中文网</a><a href="http://nodejs.cn/download" target="_blank" rel="external">http://nodejs.cn/download</a> 下载.MSI安装包。</p>
+<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172152216.jpg" alt="下载"></p>
+<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2><p>安装.MSI，安装至D:\nodejs</p>
+<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172247452.jpg" alt="安装"></p>
+<h2 id="Third"><a href="#Third" class="headerlink" title="Third"></a>Third</h2><p>配置全局路径,在安装目录下新建两个文件夹：node_cache\node_global，在CMD中执行<br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172346796.jpg" alt="配置"></p>
+<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172427871.jpg" alt="配置显示"></p>
+<h2 id="Fourth"><a href="#Fourth" class="headerlink" title="Fourth"></a>Fourth</h2><p>设置系统环境变量,添加系统环境变量：NODE_PATH  D:\nodejs\node_global\node_modules</p>
+<h2 id="Fifth"><a href="#Fifth" class="headerlink" title="Fifth"></a>Fifth</h2><p>npm注册国内镜像<br>安装bower失败，如下图<br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172534048.jpg" alt="安装失败"></p>
+<p>在D:\nodejs\node_modules\npm文件下，找到npmrc文件添加如下代码：</p>
+<p>registry=<a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a></p>
+<p>在环境变量path中添加  ;D:\nodejs\node_global</p>
+<p>解决问题~</p>
+
       
 
       
@@ -207,7 +216,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-nodejs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		
 		</ul>
@@ -326,7 +335,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
             
             <div class="clearfix"></div>
