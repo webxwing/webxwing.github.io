@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.qiudou.site">
-  <title>qiudou的个人博客</title>
+  <title>windows下mongodb安装与使用 | qiudou的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="qiudou的个人博客">
-<meta property="og:url" content="http://www.qiudou.site/index.html">
+  <meta name="description" content="在express中要用到数据库，整理学习了下在windows系统中如何使用mongodb。  1、首先安装mongodb 下载：http://www.mongodb.org/downloads    解压安装 创建文件夹D:\mongodb\data\db和D:\mongodb\data\db，分别用来存放db和日志文件，在log文件夹下创建一个日志文件db.log。 运行cmd，执行下列命令">
+<meta name="keywords" content="mongodb,web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows下mongodb安装与使用">
+<meta property="og:url" content="http://www.qiudou.site/2016/11/22/windows下mongodb安装与使用/index.html">
 <meta property="og:site_name" content="qiudou的个人博客">
-<meta property="og:description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
+<meta property="og:description" content="在express中要用到数据库，整理学习了下在windows系统中如何使用mongodb。  1、首先安装mongodb 下载：http://www.mongodb.org/downloads    解压安装 创建文件夹D:\mongodb\data\db和D:\mongodb\data\db，分别用来存放db和日志文件，在log文件夹下创建一个日志文件db.log。 运行cmd，执行下列命令">
+<meta property="og:image" content="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220000.jpg">
+<meta property="og:image" content="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220001.png">
+<meta property="og:image" content="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220002.png">
+<meta property="og:updated_time" content="2017-05-22T14:29:07.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="qiudou的个人博客">
-<meta name="twitter:description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
+<meta name="twitter:title" content="windows下mongodb安装与使用">
+<meta name="twitter:description" content="在express中要用到数据库，整理学习了下在windows系统中如何使用mongodb。  1、首先安装mongodb 下载：http://www.mongodb.org/downloads    解压安装 创建文件夹D:\mongodb\data\db和D:\mongodb\data\db，分别用来存放db和日志文件，在log文件夹下创建一个日志文件db.log。 运行cmd，执行下列命令">
+<meta name="twitter:image" content="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220000.jpg">
   
     <link rel="alternative" href="/atom.xml" title="qiudou的个人博客" type="application/atom+xml">
   
@@ -166,16 +172,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-windows下mongodb安装与使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-windows下mongodb安装与使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/windows下mongodb安装与使用/">windows下mongodb安装与使用</a>
+    <h1 class="article-title" itemprop="name">
+      windows下mongodb安装与使用
     </h1>
   
 
@@ -282,6 +286,37 @@ var _hmt = _hmt || [];
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的鼓励就是我的动力<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://opqppnh9c.bkt.clouddn.com/blog_alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://opqppnh9c.bkt.clouddn.com/blog_weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -300,10 +335,6 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/windows下mongodb安装与使用/">展开全文 >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
@@ -311,84 +342,39 @@ var _hmt = _hmt || [];
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-windows下nodejs安装与配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/24/windows下nodejs安装与配置/">windows下nodejs安装与配置</a>
-    </h1>
   
-
-        
-        <a href="/2016/10/24/windows下nodejs安装与配置/" class="archive-article-date">
-  	<time datetime="2016-10-24T09:19:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>其实网上关于nodejs的安装有很多介绍，<br>我只是把我自己的操作记录下来，<br>希望对大家、对我自己都有帮助。</p>
-</blockquote>
-<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>nodejs<a href="http://nodejs.cn/download/" target="_blank" rel="external">中文网</a><a href="http://nodejs.cn/download" target="_blank" rel="external">http://nodejs.cn/download</a> 下载.MSI安装包。</p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172152216.jpg" alt="下载"></p>
-<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2><p>安装.MSI，安装至D:\nodejs</p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172247452.jpg" alt="安装"></p>
-<h2 id="Third"><a href="#Third" class="headerlink" title="Third"></a>Third</h2><p>配置全局路径,在安装目录下新建两个文件夹：node_cache\node_global，在CMD中执行<br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172346796.jpg" alt="配置"></p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172427871.jpg" alt="配置显示"></p>
-<h2 id="Fourth"><a href="#Fourth" class="headerlink" title="Fourth"></a>Fourth</h2><p>设置系统环境变量,添加系统环境变量：NODE_PATH  D:\nodejs\node_global\node_modules</p>
-<h2 id="Fifth"><a href="#Fifth" class="headerlink" title="Fifth"></a>Fifth</h2><p>npm注册国内镜像<br>安装bower失败，如下图<br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172534048.jpg" alt="安装失败"></p>
-<p>在D:\nodejs\node_modules\npm文件下，找到npmrc文件添加如下代码：</p>
-<p>registry=<a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a></p>
-<p>在环境变量path中添加  ;D:\nodejs\node_global</p>
-<p>解决问题~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">nodejs,web开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/24/windows下nodejs安装与配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+    <a href="/2016/10/24/windows下nodejs安装与配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">windows下nodejs安装与配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://www.qiudou.site/2016/11/22/windows下mongodb安装与使用/",
+    sourceId: "windows下mongodb安装与使用",
+    productKey: "fde4125667c549eb8926a4b75e8eb03d",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+
+  
+
+  
+
   
 
 
@@ -413,8 +399,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

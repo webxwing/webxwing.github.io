@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.qiudou.site">
-  <title>qiudou的个人博客</title>
+  <title>Tag: nodejs,web开发 | qiudou的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="qiudou的个人博客">
-<meta property="og:url" content="http://www.qiudou.site/index.html">
+<meta property="og:url" content="http://www.qiudou.site/tags/nodejs-web开发/index.html">
 <meta property="og:site_name" content="qiudou的个人博客">
 <meta property="og:description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
 <meta name="twitter:card" content="summary">
@@ -168,197 +168,34 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-windows下mongodb安装与使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/windows下mongodb安装与使用/">windows下mongodb安装与使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/22/windows下mongodb安装与使用/" class="archive-article-date">
-  	<time datetime="2016-11-22T13:48:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在express中要用到数据库，整理学习了下在windows系统中如何使用mongodb。</p>
-</blockquote>
-<h3 id="1、首先安装mongodb"><a href="#1、首先安装mongodb" class="headerlink" title="1、首先安装mongodb"></a>1、首先安装mongodb</h3><ul>
-<li>下载：<a href="http://www.mongodb.org/downloads" target="_blank" rel="external">http://www.mongodb.org/downloads</a></li>
-</ul>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220000.jpg" alt="图片"></p>
-<ul>
-<li>解压安装</li>
-<li>创建文件夹D:\mongodb\data\db和D:\mongodb\data\db，分别用来存放db和日志文件，在log文件夹下创建一个日志文件db.log。</li>
-<li><p>运行cmd，执行下列命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;cd d:\mongodb\bin</div><div class="line">&gt;d:\mongodb\bin&gt;mongod -dbpath &quot;d:\mongodb\data\db&quot;</div></pre></td></tr></table></figure>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220001.png" alt="图片"></p>
-</li>
-</ul>
-<p>&lt;!-more–&gt;<br>看到类似信息，说明启动成功，默认MongoDB监听端口27017。</p>
-<ul>
-<li><p>新开cmd窗口，进入mongodb的bin目录，输入mongo，出现如下信息说明测试通过，此时已经进入了test数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\mongodb\bin&gt;mongo</div><div class="line">MongoDB shell version: 2.0.6</div><div class="line">connection to:test</div></pre></td></tr></table></figure>
-</li>
-<li><p>当mongod.exe被关闭时，mongo.exe 就无法连接到数据库了，因此每次想使用mongodb数据库都要开启mongod.exe程序，所以比较麻烦，此时我们可以将MongoDB安装为windows服务。</p>
-<p>还是运行cmd，进入bin文件夹，执行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;d:\mongodb\bin&gt;mongod --dbpath &quot;d:\mongodb\data\db&quot; --logpath &quot;d:\mongodb\data\log\db.log&quot; --install --serviceName &quot;MongoDB&quot;</div></pre></td></tr></table></figure>
-<p>这里db.log就是开始建立的日志文件，–serviceName “MongoDB” 服务名为MongoDB，接着启动mongodb服务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;d:\mongodb\bin&gt;NET START MongoDB</div></pre></td></tr></table></figure>
-</li>
-<li><p>关闭服务和删除进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">d:\mongodb\bin&gt;NET stop MongoDB</div><div class="line">d:\mongodb\bin&gt;mongod --dbpath &quot;d:\mongodb\data\db&quot; --logpath &quot;d:\mongodb\data\log\db.log&quot; --remove --serviceName &quot;MongoDB&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2、使用mongodb"><a href="#2、使用mongodb" class="headerlink" title="2、使用mongodb"></a>2、使用mongodb</h3><h4 id="（1）常用的命令"><a href="#（1）常用的命令" class="headerlink" title="（1）常用的命令"></a>（1）常用的命令</h4><ul>
-<li>show dbs    显示数据库列表</li>
-<li>use dbname    进入dbname数据库，大小写敏感，没有这个数据库也不要紧</li>
-<li>show collections    显示数据库中的集合，相当于表格</li>
-</ul>
-<h4 id="（2）创建、新增"><a href="#（2）创建、新增" class="headerlink" title="（2）创建、新增"></a>（2）创建、新增</h4><ul>
-<li><p>db.users.save({“name”:”lecaf”})    创建了名为users的集合，并新增了一条{“name”:”lecaf”}的数据。</p>
-</li>
-<li><p>db.users.insert({“name”:”ghost”, “age”:10})    在users集合中插入一条新数据，如果没有users这个集合，mongodb会自动创建。</p>
-</li>
-<li><p>save()和insert()也存在着些许区别：若新增的数据主键已经存在，insert()会不做操作并提示错误，而save() 则更改原来的内容为新内容。</p>
-</li>
-<li><p>存在数据：{ _id : 1, “ name “ : “ n1 “} ，_id是主键。</p>
-</li>
-<li>insert({ _id : 1, “ name “ : “ n2 “ })    会提示错误。</li>
-<li>save({ _id : 1, “ name “ : “ n2 “ })     会把 n1 改为  n2 ，有update的作用。</li>
-</ul>
-<h4 id="（3）删除"><a href="#（3）删除" class="headerlink" title="（3）删除"></a>（3）删除</h4><ul>
-<li>db.users.remove()    删除users集合下所有数据</li>
-<li>db.users.remove({“name”: “lecaf”})    删除users集合下name=lecaf的数据</li>
-<li>db.users.drop()或db.runCommand({“drop”,”users”})    删除集合users</li>
-<li>db.runCommand({“dropDatabase”: 1})    删除当前数据库</li>
-</ul>
-<h4 id="（4）-查找"><a href="#（4）-查找" class="headerlink" title="（4） 查找"></a>（4） 查找</h4><ul>
-<li>db.users.find()    查找users集合中所有数据</li>
-<li>db.users.findOne()    查找users集合中的第一条数据</li>
-</ul>
-<h4 id="（5）-修改"><a href="#（5）-修改" class="headerlink" title="（5） 修改"></a>（5） 修改</h4><ul>
-<li>db.users.update({“name”:”lecaf”}, {“age”:10})    修改name=lecaf的数据为age=10，第一个参数是查找条件，第二个参数是修改内容，除了主键，其他内容会被第二个参数的内容替换，主键不能修改，如图</li>
-</ul>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220002.png" alt="图片"></p>
-<h3 id="3、高级应用"><a href="#3、高级应用" class="headerlink" title="3、高级应用"></a>3、高级应用</h3><h4 id="（1）条件查找"><a href="#（1）条件查找" class="headerlink" title="（1）条件查找"></a>（1）条件查找</h4><ul>
-<li>db.collection.find({ “key” : value })    查找key=value的数据</li>
-<li>db.collection.find({ “key” : { $gt: value } })    key &gt; value</li>
-<li>db.collection.find({ “key” : { $lt: value } })    key &lt; value</li>
-<li>db.collection.find({ “key” : { $gte: value } })    key &gt;= value</li>
-<li>db.collection.find({ “key” : { $lte: value } })    key &lt;= value</li>
-<li>db.collection.find({ “key” : { $gt: value1 , $lt: value2 } })    value1 &lt; key &lt;value2</li>
-<li>db.collection.find({ “key” : { $ne: value } })    key &lt;&gt; value</li>
-<li>db.collection.find({ “key” : { $mod : [ 10 , 1 ] } })    取模运算，条件相当于key % 10 == 1 即key除以10余数为1的</li>
-<li>db.collection.find({ “key” : { $nin: [ 1, 2, 3 ] } })    不属于，条件相当于key的值不属于[ 1, 2, 3 ]中任何一个</li>
-<li>db.collection.find({ “key” : { $in: [ 1, 2, 3 ] } })    属于，条件相当于key等于[ 1, 2, 3 ]中任何一个</li>
-<li>db.collection.find({ “key” : { $size: 1 } })    $size 数量、尺寸，条件相当于key的值的数量是1（key必须是数组，一个值的情况不能算是数量为1的数组）。</li>
-<li>db.collection.find({ “key” : { $exists : true|false } })    $exists 字段存在，true返回存在字段key的数据，false返回不存在字度key的数据。</li>
-<li>db.collection.find({ “key”: /^val.*val$/i })    正则，类似like；“i”忽略大小写，“m”支持多行。</li>
-<li>db.collection.find({ $or : [{a : 1}, {b : 2} ] })    $or或 （注意：MongoDB 1.5.3后版本可用），符合条件a=1的或者符合条件b=2的数据都会查询出来。</li>
-<li>db.collection.find({ “key”: value , $or : [{ a : 1 } , { b : 2 }] })    符合条件key=value ，同时符合其他两个条件中任意一个的数据。</li>
-<li>db.collection.find({ “key.subkey” :value })    内嵌对象中的值匹配，注意：”key.subkey”必须加引号。</li>
-<li>db.collection.find({ “key”: { $not : /^val.*val$/i } })    这是一个与其他查询条件组合使用的操作符，不会单独使用。上述查询条件得到的结果集加上$not之后就能获得相反的集合。</li>
-</ul>
-<h4 id="（2）排序"><a href="#（2）排序" class="headerlink" title="（2）排序"></a>（2）排序</h4><ul>
-<li>db.collection.find().sort({ “key1” : -1 ,”key2” : 1 })    这里的1代表升序，-1代表降序</li>
-</ul>
-<h4 id="（3）其它"><a href="#（3）其它" class="headerlink" title="（3）其它"></a>（3）其它</h4><ul>
-<li>db.collection.find().limit(5)    控制返回结果数量，如果参数是0，则当作没有约束，limit()将不起作用。</li>
-<li>db.collection.find().skip(5)    控制返回结果跳过多少数量，如果参数是0，则当作没有约束，skip()将不起作用，或者说跳过了0条。</li>
-<li>db.collection.find().skip(5).limit(5)    可用来做分页，跳过5条数据再取5条数据。</li>
-<li>db.collection.find().count(true)    count()返回结果集的条数</li>
-<li>db.collection.find().skip(5).limit(5).count(true)    在加入skip()和limit()这两个操作时，要获得实际返回的结果数，需要一个参数true，否则返回的是符合查询条件的结果总数。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mongodb,web开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/windows下mongodb安装与使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-windows下nodejs安装与配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/24/windows下nodejs安装与配置/">windows下nodejs安装与配置</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/24/windows下nodejs安装与配置/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/10/24/windows下nodejs安装与配置/" class="archive-article-date">
   	<time datetime="2016-10-24T09:19:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-24</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>其实网上关于nodejs的安装有很多介绍，<br>我只是把我自己的操作记录下来，<br>希望对大家、对我自己都有帮助。</p>
-</blockquote>
-<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>nodejs<a href="http://nodejs.cn/download/" target="_blank" rel="external">中文网</a><a href="http://nodejs.cn/download" target="_blank" rel="external">http://nodejs.cn/download</a> 下载.MSI安装包。</p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172152216.jpg" alt="下载"></p>
-<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2><p>安装.MSI，安装至D:\nodejs</p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172247452.jpg" alt="安装"></p>
-<h2 id="Third"><a href="#Third" class="headerlink" title="Third"></a>Third</h2><p>配置全局路径,在安装目录下新建两个文件夹：node_cache\node_global，在CMD中执行<br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172346796.jpg" alt="配置"></p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172427871.jpg" alt="配置显示"></p>
-<h2 id="Fourth"><a href="#Fourth" class="headerlink" title="Fourth"></a>Fourth</h2><p>设置系统环境变量,添加系统环境变量：NODE_PATH  D:\nodejs\node_global\node_modules</p>
-<h2 id="Fifth"><a href="#Fifth" class="headerlink" title="Fifth"></a>Fifth</h2><p>npm注册国内镜像<br>安装bower失败，如下图<br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172534048.jpg" alt="安装失败"></p>
-<p>在D:\nodejs\node_modules\npm文件下，找到npmrc文件添加如下代码：</p>
-<p>registry=<a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a></p>
-<p>在环境变量path中添加  ;D:\nodejs\node_global</p>
-<p>解决问题~</p>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/10/24/windows下nodejs安装与配置/">windows下nodejs安装与配置</a>
+    </h1>
+  
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -370,26 +207,19 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/24/windows下nodejs安装与配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -413,10 +243,10 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
