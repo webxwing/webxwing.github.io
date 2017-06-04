@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.qiudou.site">
-  <title>qiudou的个人博客</title>
+  <title>Archives: 2017 | qiudou的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="qiudou的个人博客">
-<meta property="og:url" content="http://www.qiudou.site/index.html">
+<meta property="og:url" content="http://www.qiudou.site/archives/2017/index.html">
 <meta property="og:site_name" content="qiudou的个人博客">
 <meta property="og:description" content="qiudou.site|qiudou|茄子就要拌着吃|找一个固定的地方和一些不固定的人写些文字、撸些代码，祭奠腐朽的过去、惆怅漫长的未来。">
 <meta name="twitter:card" content="summary">
@@ -168,60 +168,34 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-MongoDB在node中的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/04/MongoDB在node中的使用/">&#39;MongoDB在node中的使用&#39;</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/04/MongoDB在node中的使用/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/01/04/MongoDB在node中的使用/" class="archive-article-date">
   	<time datetime="2017-01-04T14:24:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-04</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在express中数据的可持续，最近研究学习了下MongoDB的使用，三种东东，第一是node原生的支持，第二是用Mongoskin，第三就是用牛B的Mongoose.</p>
-<h3 id="1、Mongodb"><a href="#1、Mongodb" class="headerlink" title="1、Mongodb"></a>1、Mongodb</h3></blockquote>
-<pre><code>写一个简单的脚本来连接数据库，先在express项目中安装mongodb。
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/01/04/MongoDB在node中的使用/">&#39;MongoDB在node中的使用&#39;</a>
+    </h1>
+  
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install mongodb --save</div></pre></td></tr></table></figure>
-
-![安装](http://opqppnh9c.bkt.clouddn.com/blog_20170104/201701042202.png)
-
-连接本地MongoDB数据库并插入一个文档：
-
-* 声明依赖关系
-* 定义数据库主机和商品
-* 建立数据库连接
-* 创建数据库文档
-* 输出一个新创建的文档/对象
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongo = <span class="built_in">require</span>(<span class="string">'mongodb'</span>),</div><div class="line">    dbHost = <span class="string">'127.0.0.1'</span>,</div><div class="line">    dbPort = <span class="number">27017</span>;</div><div class="line"><span class="keyword">var</span> Db = mongo.Db;</div><div class="line"><span class="keyword">var</span> Connection = mongo.Connection;</div><div class="line"><span class="keyword">var</span> Server = mongo.Server;</div><div class="line"><span class="keyword">var</span> db = <span class="keyword">new</span> Db(<span class="string">'hello-world'</span>,<span class="keyword">new</span> Server(dbHost,dbPort),&#123;<span class="attr">safe</span>:<span class="literal">true</span>&#125;);</div><div class="line"></div><div class="line">db.open(<span class="function"><span class="keyword">function</span>(<span class="params">error,dbConnection</span>)</span>&#123;</div><div class="line">   <span class="keyword">if</span>(error)&#123;</div><div class="line">       <span class="built_in">console</span>.error(error);</div><div class="line">       process.exit(<span class="number">1</span>);</div><div class="line">   &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'db state: '</span>, db._state);</div><div class="line">    item = &#123;</div><div class="line">       <span class="attr">userid</span>:<span class="string">'qiudou'</span>,</div><div class="line">        <span class="attr">password</span>:<span class="string">'990811'</span></div><div class="line">    &#125;</div><div class="line">    dbConnection.collection(<span class="string">'users'</span>).insert(item,<span class="function"><span class="keyword">function</span>(<span class="params">err,item</span>)</span>&#123;</div><div class="line">       <span class="keyword">if</span>(err)&#123;</div><div class="line">           <span class="built_in">console</span>.error(err);</div><div class="line">           process(<span class="number">1</span>);</div><div class="line">       &#125;</div><div class="line">       <span class="built_in">console</span>.info(<span class="string">'created/inserted: '</span>, item);</div><div class="line">        db.close();</div><div class="line">        process.exit(<span class="number">0</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
-数据插入成功，可以显示数据了：
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">dbConnection.collection(<span class="string">'users'</span>).findOne(&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)&#123;</div><div class="line">        <span class="built_in">console</span>.error(err);</div><div class="line">        process.exit(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.info(<span class="string">'findOne: '</span>, item);</div><div class="line">    db.close();</div><div class="line">    process.exit(<span class="number">0</span>);</div><div class="line">&#125;);</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure>
-
-来个图：
-
-![结果](http://opqppnh9c.bkt.clouddn.com/blog_20170104/201701042210.png)
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -237,174 +211,19 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/04/MongoDB在node中的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
   
-    <article id="post-windows下mongodb安装与使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/windows下mongodb安装与使用/">windows下mongodb安装与使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/22/windows下mongodb安装与使用/" class="archive-article-date">
-  	<time datetime="2016-11-22T13:48:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在express中要用到数据库，整理学习了下在windows系统中如何使用mongodb。</p>
-</blockquote>
-<h3 id="1、首先安装mongodb"><a href="#1、首先安装mongodb" class="headerlink" title="1、首先安装mongodb"></a>1、首先安装mongodb</h3><ul>
-<li>下载：<a href="http://www.mongodb.org/downloads" target="_blank" rel="external">http://www.mongodb.org/downloads</a></li>
-</ul>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220000.jpg" alt="图片"></p>
-<ul>
-<li>解压安装</li>
-<li>创建文件夹D:\mongodb\data\db和D:\mongodb\data\db，分别用来存放db和日志文件，在log文件夹下创建一个日志文件db.log。</li>
-<li><p>运行cmd，执行下列命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;cd d:\mongodb\bin</div><div class="line">&gt;d:\mongodb\bin&gt;mongod -dbpath &quot;d:\mongodb\data\db&quot;</div></pre></td></tr></table></figure>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161122/201611220001.png" alt="图片"></p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2016/11/22/windows下mongodb安装与使用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/windows下mongodb安装与使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-windows下nodejs安装与配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/24/windows下nodejs安装与配置/">windows下nodejs安装与配置</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/24/windows下nodejs安装与配置/" class="archive-article-date">
-  	<time datetime="2016-10-24T09:19:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>其实网上关于nodejs的安装有很多介绍，<br>我只是把我自己的操作记录下来，<br>希望对大家、对我自己都有帮助。</p>
-</blockquote>
-<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>nodejs<a href="http://nodejs.cn/download/" target="_blank" rel="external">中文网</a><a href="http://nodejs.cn/download" target="_blank" rel="external">http://nodejs.cn/download</a> 下载.MSI安装包。</p>
-<p><img src="http://opqppnh9c.bkt.clouddn.com/blog_20161024/20161024172152216.jpg" alt="下载"><br>
-        
-          <a class="article-more-a" href="/2016/10/24/windows下nodejs安装与配置/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/24/windows下nodejs安装与配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -428,9 +247,9 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
