@@ -175,7 +175,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/04/MongoDB在node中的使用/">&#39;MongoDB在node中的使用&#39;</a>
+      <a class="article-title" href="/2017/01/04/MongoDB在node中的使用/">MongoDB在node中的使用</a>
     </h1>
   
 
@@ -190,31 +190,13 @@ var _hmt = _hmt || [];
       
         <blockquote>
 <p>在express中数据的可持续，最近研究学习了下MongoDB的使用，三种东东，第一是node原生的支持，第二是用Mongoskin，第三就是用牛B的Mongoose.</p>
-<h3 id="1、Mongodb"><a href="#1、Mongodb" class="headerlink" title="1、Mongodb"></a>1、Mongodb</h3></blockquote>
-<pre><code>写一个简单的脚本来连接数据库，先在express项目中安装mongodb。
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install mongodb --save</div></pre></td></tr></table></figure>
-
-![安装](http://opqppnh9c.bkt.clouddn.com/blog_20170104/201701042202.png)
-
-连接本地MongoDB数据库并插入一个文档：
-
-* 声明依赖关系
-* 定义数据库主机和商品
-* 建立数据库连接
-* 创建数据库文档
-* 输出一个新创建的文档/对象
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongo = <span class="built_in">require</span>(<span class="string">'mongodb'</span>),</div><div class="line">    dbHost = <span class="string">'127.0.0.1'</span>,</div><div class="line">    dbPort = <span class="number">27017</span>;</div><div class="line"><span class="keyword">var</span> Db = mongo.Db;</div><div class="line"><span class="keyword">var</span> Connection = mongo.Connection;</div><div class="line"><span class="keyword">var</span> Server = mongo.Server;</div><div class="line"><span class="keyword">var</span> db = <span class="keyword">new</span> Db(<span class="string">'hello-world'</span>,<span class="keyword">new</span> Server(dbHost,dbPort),&#123;<span class="attr">safe</span>:<span class="literal">true</span>&#125;);</div><div class="line"></div><div class="line">db.open(<span class="function"><span class="keyword">function</span>(<span class="params">error,dbConnection</span>)</span>&#123;</div><div class="line">   <span class="keyword">if</span>(error)&#123;</div><div class="line">       <span class="built_in">console</span>.error(error);</div><div class="line">       process.exit(<span class="number">1</span>);</div><div class="line">   &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'db state: '</span>, db._state);</div><div class="line">    item = &#123;</div><div class="line">       <span class="attr">userid</span>:<span class="string">'qiudou'</span>,</div><div class="line">        <span class="attr">password</span>:<span class="string">'990811'</span></div><div class="line">    &#125;</div><div class="line">    dbConnection.collection(<span class="string">'users'</span>).insert(item,<span class="function"><span class="keyword">function</span>(<span class="params">err,item</span>)</span>&#123;</div><div class="line">       <span class="keyword">if</span>(err)&#123;</div><div class="line">           <span class="built_in">console</span>.error(err);</div><div class="line">           process(<span class="number">1</span>);</div><div class="line">       &#125;</div><div class="line">       <span class="built_in">console</span>.info(<span class="string">'created/inserted: '</span>, item);</div><div class="line">        db.close();</div><div class="line">        process.exit(<span class="number">0</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
-数据插入成功，可以显示数据了：
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">dbConnection.collection(<span class="string">'users'</span>).findOne(&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)&#123;</div><div class="line">        <span class="built_in">console</span>.error(err);</div><div class="line">        process.exit(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.info(<span class="string">'findOne: '</span>, item);</div><div class="line">    db.close();</div><div class="line">    process.exit(<span class="number">0</span>);</div><div class="line">&#125;);</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure>
-
-来个图：
-
-![结果](http://opqppnh9c.bkt.clouddn.com/blog_20170104/201701042210.png)
-</code></pre>
+</blockquote>
+<h3 id="1、Mongodb"><a href="#1、Mongodb" class="headerlink" title="1、Mongodb"></a>1、Mongodb</h3><p>写一个简单的脚本来连接数据库，先在express项目中安装mongodb。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ npm install mongodb --save</div></pre></td></tr></table></figure>
+<div align="center"><br><img src="http://opqppnh9c.bkt.clouddn.com/blog_20170104/201701042202.png" alt="安装"><br></div>
+        
+          <a class="article-more-a" href="/2017/01/04/MongoDB在node中的使用/#more">more >></a>
+        
       
 
       
@@ -227,11 +209,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
         		</li>
       		
 		</ul>
@@ -306,11 +288,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
         		</li>
       		
 		</ul>
@@ -375,11 +357,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web开发</a>
         		</li>
       		
 		</ul>
@@ -498,7 +480,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,7 +488,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
             
             <div class="clearfix"></div>
