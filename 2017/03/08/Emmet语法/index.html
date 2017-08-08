@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://www.qiudou.site/2017/03/08/Emmet语法/index.html">
 <meta property="og:site_name" content="qiudou的个人博客">
 <meta property="og:description" content="缩写语法Emmet 使用类似于 CSS 选择器的语法描述元素在生成的文档树中的位置及其属性。 元素可以使用元素名（如 div 或者 p）来生成 HTML 标签。Emmet 没有预定义的有效元素名的集合，可以把任何单词当作标签来生成和使用：div → , foo →  等。 嵌套运算符嵌套运算符用于以缩写的方式安排元素在生成文档树中的位置：将其放在内部或成为相邻的元素。 “&amp;gt;”运算符可以使用">
-<meta property="og:updated_time" content="2017-08-08T16:24:49.450Z">
+<meta property="og:updated_time" content="2017-08-08T16:29:52.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Emmet语法">
 <meta name="twitter:description" content="缩写语法Emmet 使用类似于 CSS 选择器的语法描述元素在生成的文档树中的位置及其属性。 元素可以使用元素名（如 div 或者 p）来生成 HTML 标签。Emmet 没有预定义的有效元素名的集合，可以把任何单词当作标签来生成和使用：div → , foo →  等。 嵌套运算符嵌套运算符用于以缩写的方式安排元素在生成文档树中的位置：将其放在内部或成为相邻的元素。 “&amp;gt;”运算符可以使用">
@@ -238,8 +238,7 @@ var _hmt = _hmt || [];
 <p>在这个例子里， 我们用 &gt; 运算符明确的将 Click here to continue 下移一级，放在 </p><p> 元素内，但对于 a 元素的内容就不需要了，因为 <a> 仅有 here 这一部分内容，它不改变父元素的上下文。<br>作为比较，下面是不带有 &gt; 运算符的相同缩写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p&#123;Click &#125;+a&#123;here&#125;+&#123; to continue&#125;</div></pre></td></tr></table></figure></a></p>
 <p>将生成<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Click <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>here<span class="tag">&lt;/<span class="name">a</span>&gt;</span> to continue</div></pre></td></tr></table></figure></p>
 <h3 id="缩写格式的注意事项"><a href="#缩写格式的注意事项" class="headerlink" title="缩写格式的注意事项"></a>缩写格式的注意事项</h3><p>当熟悉了 Emmet 的缩写语法后，可能会想要使用一些格式来生成更可读的缩写。例如，在元素和运算符之间使用空格间隔：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(header &gt; ul.nav &gt; li*5) + footer</div></pre></td></tr></table></figure></p>
-<p>但是这种写法是错误的，因为空格是 Emmet 停止缩写解析的标识符。</p>
-<p>请多用户误以为每个缩写都应写在新行上，但是他们错了：可以在文本的任意位置键入和扩展缩写。</p>
+<p>但是这种写法是错误的，因为空格是 Emmet 停止缩写解析的标识符。<br>请多用户误以为每个缩写都应写在新行上，但是他们错了：可以在文本的任意位置键入和扩展缩写。</p>
 
       
 
@@ -431,7 +430,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,11 +438,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
             
             <div class="clearfix"></div>
